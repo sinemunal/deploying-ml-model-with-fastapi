@@ -34,7 +34,7 @@ def train_model(X_train, y_train, is_optimized=False):
         model_cv = GridSearchCV(
             RandomForestClassifier(),
             param_grid=RF_PARAM_GRID,
-            cv=StratifiedKFold(n_splits=3)
+            cv=StratifiedKFold(n_splits=3),
         )
         model_cv.fit(X_train, y_train)
         model = model_cv.best_estimator_
@@ -43,7 +43,7 @@ def train_model(X_train, y_train, is_optimized=False):
 
 
 def inference(model, X):
-    """ Run model inferences and return the predictions.
+    """Run model inferences and return the predictions.
 
     Inputs
     ------
