@@ -1,0 +1,4 @@
+Output of Model Performance: 
+         precision    recall     fbeta
+ Male    0.738243  0.628874  0.679184
+ Female  0.774725   0.57551  0.660422
