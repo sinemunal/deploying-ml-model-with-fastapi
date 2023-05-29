@@ -28,6 +28,12 @@ https://github.com/udacity/nd0821-c3-starter-code/tree/master
    * Suggestion: for simplicity, the function can just output the performance on slices of just the categorical features.
 * Write a model card using the provided template.
 
+## Model performance
+To see the model performance for each specified categorical value run:
+` python model_performance.py > screenshots/slice_output.txt`
+This will create the performance metrics of trained model on test set for each gender
+and saves the results to slice_output.txt.
+
 ## API Creation
 
 * Create a RESTful API using FastAPI this must implement:

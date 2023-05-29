@@ -16,7 +16,7 @@ def save_model(model, filename):
     -------
         None
     """
-    joblib.dump(model, f"../model/{filename}")
+    joblib.dump(model, f"model/{filename}")
 
 
 def load_model(filename):
@@ -31,7 +31,7 @@ def load_model(filename):
     model :
         Trained machine learning model.
     """
-    return joblib.load(f"../model/{filename}")
+    return joblib.load(f"model/{filename}")
 
 
 def compute_model_metrics(y, preds):
