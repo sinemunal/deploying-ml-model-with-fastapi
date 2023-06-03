@@ -5,7 +5,7 @@ For additional information see the Model Card paper: https://arxiv.org/pdf/1810.
 ## Model Details
 Sinem Unal created the model for the project. 
 There is only one model used where a simple hyper-parameter tuning was performed. RandomForestClassifier from scikit-learn package (version 1.2.2) is used.
-Hyperparameters as a result of simple grid search CV: `n_estimators:200`, `max_depth:3` and the rest is default values.
+Hyperparameters as a result of simple grid search CV: `n_estimators:100`, `max_depth:3` and the rest is default values.
 
 
 ## Intended Use
@@ -19,7 +19,7 @@ census dataset from <a href="https://archive.ics.uci.edu/ml/datasets/census+inco
 20% of the whole dataset is used as test dataset.
 
 ## Metrics
-Precision, recall and fbeta are used to determine model performance. Results on the test data are 0.7433155080213903, 0.6205357142857143, 0.6763990267639903 respectively
+Precision, recall and fbeta are used to determine model performance. Results on the test data are 0.47883787661406024, 0.8514030612244898, 0.6129476584022039 respectively.
 
 
 ## Ethical Considerations
@@ -28,8 +28,8 @@ male and female as can be seen below.
 
 Metrics | precision | recall | fbeta  
 --- | --- |--------|----
-Male | 0.738243 | 0.628874    | 0.679184 
-Female|  0.774725 |  0.57551 | 0.660422
+Male | 0.461128 | 0.914588    | 0.613124
+Female|  0.762195 |  0.510204 | 0.611247
 If there is a predetermined group fairness criteria (https://en.wikipedia.org/wiki/Fairness_(machine_learning)#Group_Fairness_criteria) then one should
 also calculate the scores with respect to those measures and see if there is
 any significant discrepancy on those metrics. 

@@ -3,7 +3,7 @@ from sklearn.model_selection import GridSearchCV, StratifiedKFold
 
 RF_PARAM_GRID = {
     "n_estimators": [100, 200],
-    "max_depth": [3, None],
+    "max_depth": [2, 3],
     "random_state": [42],
     "class_weight": ["balanced"],
 }
@@ -38,7 +38,7 @@ def train_model(X_train, y_train, is_optimized=False):
         )
         model_cv.fit(X_train, y_train)
         model = model_cv.best_estimator_
-
+        print(model_cv.best_params_)
     return model
 
 
