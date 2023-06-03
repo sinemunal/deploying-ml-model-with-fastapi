@@ -7,26 +7,13 @@ https://github.com/udacity/nd0821-c3-starter-code/tree/master
   `conda create --name udacity-fastapi --file requirements.txt -c conda-forge`
 
       
-## GitHub Actions
-
-* Setup GitHub Actions on your repository. You can use one of the pre-made GitHub Actions if at a minimum it runs pytest and flake8 on push and requires both to pass without error.
-   * Make sure you set up the GitHub Action to have the same version of Python as you used in development.
-* Add your <a href="https://github.com/marketplace/actions/configure-aws-credentials-action-for-github-actions" target="_blank">AWS credentials to the Action</a>.
-* Set up <a href="https://github.com/iterative/setup-dvc" target="_blank">DVC in the action</a> and specify a command to `dvc pull`.
-
 ## Data
 
-* Download census.csv from the data folder in the starter repository.
+* Use census.csv from the data folder in the repository.
    * Information on the dataset can be found <a href="https://archive.ics.uci.edu/ml/datasets/census+income" target="_blank">here</a>.
-* This data is messy, try to open it in pandas and see what you get.
 
 ## Model
-
-* Using the starter code, write a machine learning model that trains on the clean data and saves the model. Complete any function that has been started.
-* Write unit tests for at least 3 functions in the model code.
-* Write a function that outputs the performance of the model on slices of the data.
-   * Suggestion: for simplicity, the function can just output the performance on slices of just the categorical features.
-* Write a model card using the provided template.
+* A model card provided for the implemented model.
 
 ## Model performance
 To see the model performance for each specified categorical value run:
