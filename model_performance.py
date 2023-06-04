@@ -3,7 +3,11 @@ import pandas as pd
 
 from src.data_processing import process_data
 from src.model import inference
-from src.model_helpers import load_model, compute_model_metrics_on_slices
+from src.model_helpers import (
+    load_model,
+    compute_model_metrics_on_slices,
+    compute_model_metrics,
+)
 
 
 def _calculate_inference(test_df, target_name, cat_features):
@@ -49,4 +53,15 @@ y_test, y_preds = _calculate_inference(test, target_name, cat_features)
 
 # Calculate performance metrics with respect to gender feature
 result_df = compute_model_metrics_on_slices(y_test, y_preds, test[feature_name])
-print("Output of Model Performance: \n", result_df)
+
+# Calculate the performance metrics
+result = compute_model_metrics(y_test, y_preds)
+result_dict = {
+    "precision": result[0],
+    "recall": result[1],
+    "fbeta": result[2],
+}
+
+print("Output of Model Performance on test data: \n", result_dict)
+
+print("\n Output of Model Performance per gender on test data: \n", result_df)
