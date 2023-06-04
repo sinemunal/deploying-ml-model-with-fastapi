@@ -35,22 +35,22 @@ def inference_setting1():
 @pytest.fixture
 def inference_setting2():
     return {
-        "name": "Inference1",
+        "name": "Inference2",
         "description": "Inference data required for the model",
         "data": {
-            "age": [41],
+            "age": [78],
             "workclass": ["Self-emp-inc"],
-            "fnlgt": [117963],
-            "education": ["Doctorate"],
-            "education-num": [16],
-            "marital-status": ["Never-married"],
-            "occupation": ["Prof-specialty"],
-            "relationship": ["Own-child"],
+            "fnlgt": [385242],
+            "education": ["Bachelors"],
+            "education-num": [13],
+            "marital-status": ["Married-civ-spouse"],
+            "occupation": ["Exec-managerial"],
+            "relationship": ["Husband"],
             "race": ["White"],
             "sex": ["Male"],
-            "capital-gain": [0],
+            "capital-gain": [9386],
             "capital-loss": [0],
-            "hours-per-week": [40],
+            "hours-per-week": [45],
             "native-country": ["United-States"],
         },
         "id": 2,
@@ -65,7 +65,7 @@ def test_api_gets_root():
 
 
 # Test POST method with "/inference" endpoint
-def test_create_inference_for_a_data_point(inference_setting1):
+def test_create_inference_for_a_data_point_class0(inference_setting1):
     r = client.post(
         "/inference/",
         headers={"X-Token": "coneofsilence"},
@@ -79,7 +79,7 @@ def test_create_inference_for_a_data_point(inference_setting1):
     }
 
 
-def test_create_inference_for_different_data_point(inference_setting2):
+def test_create_inference_for_different_data_point_class1(inference_setting2):
     r = client.post(
         "/inference/",
         headers={"X-Token": "coneofsilence"},
@@ -89,7 +89,7 @@ def test_create_inference_for_different_data_point(inference_setting2):
     assert r.json() == {
         "name": "InferenceResult2",
         "description": "Inference result",
-        "result": [0],
+        "result": [1],
     }
 
 
